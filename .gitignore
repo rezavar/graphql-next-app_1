@@ -4,6 +4,7 @@
 /node_modules
 /.pnp
 .pnp.*
+./package-lock.json
 .yarn/*
 !.yarn/patches
 !.yarn/plugins
@@ -16,7 +17,8 @@
 # next.js
 /.next/
 /out/
-
+/.idea/
+/.idea/*
 # production
 /build
 

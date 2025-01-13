@@ -1,0 +1,8 @@
+schema: "http://localhost:4000/books"
+documents: "./src/queries/**/*.graphql"
+generates:
+  ./src/generated/graphql.ts:
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+      - "typescript-react-apollo"
