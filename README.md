@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Test Book List
 
-## Getting Started
+## توضیحات پروژه
 
-First, run the development server:
+این پروژه یک لیست کتاب ساده است که با استفاده از GraphQL و React پیاده‌سازی شده است. کاربران می‌توانند کتاب‌های جدید اضافه کنند، کتاب‌های موجود را ویرایش کنند یا حذف کنند. این پروژه همچنین از Apollo Client برای مدیریت کش استفاده می‌کند.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## تکنولوژی‌های استفاده شده
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **React**: برای ساخت رابط کاربری.
+- **TypeScript**: برای تایپ‌گذاری ایستا و افزایش قابلیت نگهداری کد.
+- **Next.js**: برای مدیریت روتینگ و SSR/CSR.
+- **Apollo Client**: برای ارتباط با GraphQL و مدیریت کش.
+- **GraphQL**: برای طراحی و مدیریت API.
+- **ESLint و Prettier**: برای اطمینان از کیفیت کد.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## نحوه نصب و اجرا
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. ریپازیتوری را کلون کنید:
 
-## Learn More
+   ```bash
+   git clone https://github.com/username/test-book-list.git
+   cd test-book-list
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+2. وابستگی‌ها را نصب کنید:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```bash
+   npm install
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. برنامه را اجرا کنید:
 
-## Deploy on Vercel
+   ```bash
+   npm run dev
+   ```
+   ابتدا سرور اجرا میشود و بعد از آن next اجرا میشود.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+5. برنامه در آدرس `http://localhost:3000` در دسترس خواهد بود.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   ```bash
+   npm run dev
+   ```
+
+
+
+
+## ویژگی‌ها
+
+- افزودن کتاب جدید
+- ویرایش کتاب‌های موجود
+- حذف کتاب‌ها
+- مدیریت کش با Apollo Client
+
+5. یک Pull Request ایجاد کنید.
+
+## لایسنس
+
+این پروژه تحت لایسنس MIT منتشر شده است.
+
