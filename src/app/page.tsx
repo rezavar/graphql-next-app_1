@@ -1,17 +1,35 @@
 'use client';
 
 import { useState } from 'react';
-import { useCreateBookMutation, useDeleteBookMutation, useGetBooksQuery, useUpdateBookMutation } from '@/generated/graphql';
+import {
+    GetBooksDocument, GetBooksQuery,
+    useCreateBookMutation,
+    useDeleteBookMutation,
+    useGetBooksQuery,
+    useUpdateBookMutation
+} from '@/generated/graphql';
 
 
 const Books = () => {
 
   const { data, loading, error ,refetch } = useGetBooksQuery();
-  const [createBook] = useCreateBookMutation();
   const [updateBook] = useUpdateBookMutation();
   const [deleteBook] = useDeleteBookMutation();
+  // const [createBook] = useCreateBookMutation();
+    const [createBook] = useCreateBookMutation({
+        update(cache, { data }) {
+            if (!data?.createBook) return;
+            const existingBooks = cache.readQuery<GetBooksQuery>({ query: GetBooksDocument })?.books ?? [];
+            cache.writeQuery({
+                query: GetBooksDocument,
+                data: { books: [...existingBooks, data.createBook] },
+            });
+        },
+    });
 
-  const [newTitle, setNewTitle] = useState('');
+
+
+    const [newTitle, setNewTitle] = useState('');
   const [newAuthor, setNewAuthor] = useState('');
   const [updateTitle, setUpdateTitle] = useState('');
   const [updateAuthor, setUpdateAuthor] = useState('');
@@ -26,7 +44,7 @@ const Books = () => {
         setMessage('Book added successfully!');
         setNewTitle('');
         setNewAuthor('');
-        await refetch();
+        // await refetch();
       } catch (err: Error|unknown) {
         setMessage('Failed to add book.');
         console.log(err)
